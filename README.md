@@ -30,3 +30,10 @@ Install Alta's `data-science` and Chester's `streetspace` packages:
 (ds_projects) aaron-at-work:~ aaronfraint$ pip install git+https://github.com/chesterharvey/StreetSpace.git
 (ds_projects) aaron-at-work:~ aaronfraint$ pip install git+https://github.com/AltaPlanning/data-science.git
 ```
+
+## Refreshing modules
+If the module was installed via `pip`, use the following commands to update the `data-science` or `streetspace` packages:
+```bash
+(ds_projects) aaron-at-work:~ aaronfraint$ pip uninstall alta_data_science
+(ds_projects) aaron-at-work:~ aaronfraint$ pip install git+https://github.com/AltaPlanning/data-science.git
+```
