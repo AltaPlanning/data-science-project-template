@@ -24,7 +24,7 @@ from os.path import join
 import postGIS.pg_io as pg_io
 from alta_settings import DEFAULT_PG_CONFIG as config
 
-from helpers import PG_DB, PROJECT_FILE_ROOT, LOCAL_PROJECTION
+from project_helpers import PG_DB, PROJECT_FILE_ROOT, LOCAL_PROJECTION
 
 
 def load_shapefiles():
