@@ -1,5 +1,5 @@
 """
-``helpers.py``
+``project_helpers.py``
 --------------
 
 A collection of variables, functions, and anything else that
@@ -8,7 +8,7 @@ facilitates development across this project's code base.
 Example
 -------
 
-    >>> from helpers import PG_DB, PROJECT_FILE_ROOT
+    >>> from project_helpers import PG_DB, PROJECT_FILE_ROOT
 
 """
 from os.path import join
