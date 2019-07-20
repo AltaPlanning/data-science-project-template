@@ -16,8 +16,16 @@ from os.path import join
 import alta_settings as settings
 
 # Project-level settings
-PROJECT_NAME = 'Sunnyvale'
-PROJECT_FILE_ROOT = join(settings.DS_PROJECT_ROOT, PROJECT_NAME)
 PG_DB = 'ds_sunnyvale'
 
+PROJECT_NAME = 'Sunnyvale'
+PROJECT_FILE_ROOT = join(settings.DS_PROJECT_ROOT, PROJECT_NAME)
+
 LOCAL_PROJECTION = 2227
+
+TEAM_MEMBERS = [
+    'Aaron Fraint, AICP',
+]
+
+ANALYST_TEAM = ' & '.join(TEAM_MEMBERS)
+

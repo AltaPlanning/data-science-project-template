@@ -14,12 +14,13 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../..'))
 
+from project_helpers import PROJECT_NAME, ANALYST_TEAM
 
 # -- Project information -----------------------------------------------------
 
-project = 'documentation-template'
+project = PROJECT_NAME
 copyright = '2019, Alta Data Science team'
-author = 'Alta Data Science team'
+author = ANALYST_TEAM
 
 # The full version, including alpha/beta/rc tags
 release = '0.1.0'
