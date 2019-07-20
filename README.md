@@ -16,7 +16,7 @@ To update the HTML build run:
 ___
 
 
-## MacOS Installation
+## Python environment Installation
 
 Build a new virtual environment named `dsp` using `conda`, and add the `conda-forge` channel:
 
@@ -29,33 +29,63 @@ Build a new virtual environment named `dsp` using `conda`, and add the `conda-fo
 
 Install the various open-source modules needed:
 
+General `python` tooling:
 ```bash
 (dsp) ~ conda install ipython
-(dsp) ~ conda install osmnx
-(dsp) ~ conda install ipython
-(dsp) ~ conda install python-igraph
-(dsp) ~ conda install tqdm
-(dsp) ~ conda install psycopg2
-(dsp) ~ conda install geoalchemy2
-(dsp) ~ conda install xlsxwriter
-(dsp) ~ conda install xlrd
-(dsp) ~ conda install -c plotly plotly_express
-(dsp) ~ conda install sphinx
-(dsp) ~ conda install sphinx_rtd_theme
-(dsp) ~ pip install PySimpleGUI
+(dsp) ~ conda install jupyter
+(dsp) ~ conda install jupytext
 ```
 
-Install Alta's `data-science` and Chester's `streetspace` packages:
-
+Database i/o:
 ```bash
+(dsp) ~ conda install psycopg2
+(dsp) ~ conda install geoalchemy2
+```
+
+Excel file i/o:
+```bash
+(dsp) ~ conda install xlsxwriter
+(dsp) ~ conda install xlrd
+```
+
+Data visualization:
+```bash
+(dsp) ~ conda install seaborn
+(dsp) ~ conda install -c plotly plotly_express
+```
+
+General UI/feedback:
+```bash
+(dsp) ~ conda install tqdm
+```
+
+Documentation:
+```bash
+(dsp) ~ conda install sphinx
+(dsp) ~ conda install sphinx_rtd_theme
+```
+
+Data analysis:
+```bash
+(dsp) ~ conda install python-igraph
+(dsp) ~ conda install osmnx
+(dsp) ~ conda install -c udst pandana
+```
+
+`pip`-only packages, including Alta's `data-science` and Chester's `streetspace`
+```bash
+(dsp) ~ pip install PySimpleGUI
+(dsp) ~ pip install rinohtype
 (dsp) ~ pip install git+https://github.com/chesterharvey/StreetSpace.git
 (dsp) ~ pip install git+https://github.com/AltaPlanning/data-science.git
 ```
 ___
 
-## Refresh modules as needed
+## Refresh environment modules as needed
 
-If the module was installed via `pip`, use the following commands to update the `data-science` or `streetspace` packages:
+For `pip install`-ed packages 
+(like `data-science` or `streetspace`),
+use the following commands to update:
 ```bash
 (dsp) ~ pip uninstall alta_data_science
 (dsp) ~ pip install git+https://github.com/AltaPlanning/data-science.git
