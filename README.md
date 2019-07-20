@@ -22,6 +22,8 @@ Install the various open-source modules needed:
 (ds_projects) cpu:~ you$ conda install xlsxwriter
 (ds_projects) cpu:~ you$ conda install xlrd
 (ds_projects) cpu:~ you$ conda install -c plotly plotly_express
+(ds_projects) cpu:~ you$ conda install sphinx
+(ds_projects) cpu:~ you$ conda install sphinx_rtd_theme
 (ds_projects) cpu:~ you$ pip install PySimpleGUI
 ```
 
