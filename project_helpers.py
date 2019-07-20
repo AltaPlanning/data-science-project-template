@@ -15,6 +15,8 @@ from os.path import join
 
 import alta_settings as settings
 
+VERSION = '0.1.0'
+
 # Project-level settings
 PG_DB = 'ds_sunnyvale'
 

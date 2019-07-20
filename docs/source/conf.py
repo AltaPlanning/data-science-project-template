@@ -14,7 +14,7 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../..'))
 
-from project_helpers import PROJECT_NAME, ANALYST_TEAM
+from project_helpers import PROJECT_NAME, ANALYST_TEAM, VERSION
 
 # -- Project information -----------------------------------------------------
 
@@ -23,7 +23,7 @@ copyright = '2019, Alta Data Science team'
 author = ANALYST_TEAM
 
 # The full version, including alpha/beta/rc tags
-release = '0.1.0'
+release = VERSION
 
 
 # -- General configuration ---------------------------------------------------
