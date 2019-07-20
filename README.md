@@ -75,7 +75,6 @@ Data analysis:
 `pip`-only packages, including Alta's `data-science` and Chester's `streetspace`
 ```bash
 (dsp) ~ pip install PySimpleGUI
-(dsp) ~ pip install rinohtype
 (dsp) ~ pip install git+https://github.com/chesterharvey/StreetSpace.git
 (dsp) ~ pip install git+https://github.com/AltaPlanning/data-science.git
 ```
