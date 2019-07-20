@@ -1,6 +1,6 @@
 """
 ``project_helpers.py``
---------------
+----------------------
 
 A collection of variables, functions, and anything else that
 facilitates development across this project's code base.

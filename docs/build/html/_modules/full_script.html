@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>full_script &mdash; documentation-template 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> documentation-template
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">data-science-project-template</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">documentation-template</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>full_script</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for full_script</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Sample ``full_script.py``</span>
+<span class="sd">-------------------------</span>
+
+<span class="sd">This script is intended to be a single-stop shop</span>
+<span class="sd">for performing analysis on this project.</span>
+
+<span class="sd">As you write code, compartmentalize logical sections</span>
+<span class="sd">within functions and/or scripts as needed.</span>
+
+<span class="sd">This module is where you&#39;ll plug all the disparate pieces</span>
+<span class="sd">together so someone can execute the full suite in one go.</span>
+
+
+<span class="sd">Examples</span>
+<span class="sd">--------</span>
+
+<span class="sd">    &gt;&gt;&gt; # This is where you&#39;d put some sample commands</span>
+<span class="sd">    &gt;&gt;&gt; # Line 2 of the code example</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">join</span>
+
+<span class="kn">import</span> <span class="nn">postGIS.pg_io</span> <span class="k">as</span> <span class="nn">pg_io</span>
+<span class="kn">from</span> <span class="nn">alta_settings</span> <span class="k">import</span> <span class="n">DEFAULT_PG_CONFIG</span> <span class="k">as</span> <span class="n">config</span>
+
+<span class="kn">from</span> <span class="nn">project_helpers</span> <span class="k">import</span> <span class="n">PG_DB</span><span class="p">,</span> <span class="n">PROJECT_FILE_ROOT</span><span class="p">,</span> <span class="n">LOCAL_PROJECTION</span>
+
+
+<div class="viewcode-block" id="load_shapefiles"><a class="viewcode-back" href="../full_script.html#full_script.load_shapefiles">[docs]</a><span class="k">def</span> <span class="nf">load_shapefiles</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; This is a basic single-line docstring explaining what this function does&quot;&quot;&quot;</span>
+
+    <span class="c1"># Get a list of files in the directory that have &#39;.shp&#39; in the name</span>
+    <span class="n">shp_folder</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">PROJECT_FILE_ROOT</span><span class="p">,</span> <span class="s1">&#39;shapefiles_to_import&#39;</span><span class="p">)</span>
+    <span class="n">shapefiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">shp_folder</span><span class="p">)</span> <span class="k">if</span> <span class="s1">&#39;.shp&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+
+    <span class="c1"># Import the shapefiles in our list</span>
+    <span class="k">for</span> <span class="n">shp</span> <span class="ow">in</span> <span class="n">shapefiles</span><span class="p">:</span>
+        <span class="n">pg_table_name</span> <span class="o">=</span> <span class="n">shp</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.shp&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">shp_path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">shp_folder</span><span class="p">,</span> <span class="n">shp</span><span class="p">)</span>
+        <span class="n">pg_io</span><span class="o">.</span><span class="n">shp_to_postgis</span><span class="p">(</span><span class="n">shp_path</span><span class="p">,</span> <span class="n">pg_table_name</span><span class="p">,</span> <span class="n">PG_DB</span><span class="p">,</span> <span class="n">output_epsg</span><span class="o">=</span><span class="n">LOCAL_PROJECTION</span><span class="p">,</span> <span class="o">**</span><span class="n">config</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="update_value"><a class="viewcode-back" href="../full_script.html#full_script.update_value">[docs]</a><span class="k">def</span> <span class="nf">update_value</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="n">column_name</span><span class="p">,</span> <span class="n">old_val</span><span class="p">,</span> <span class="n">new_val</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is a long-form doctring, with room for multi-line explanation.</span>
+
+<span class="sd">    This function updates a column in a PgSQL table, replacing old_val with the new_val</span>
+
+<span class="sd">    :param table_name: &#39;name_of_table&#39;</span>
+<span class="sd">    :param column_name: &#39;name_of_col&#39;</span>
+<span class="sd">    :param old_val: any value that matches the data type of ``column_name``</span>
+<span class="sd">    :param new_val: any value that matches the data type of ``column_name``</span>
+
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        UPDATE </span><span class="si">{table_name}</span><span class="s2"> SET </span><span class="si">{column_name}</span><span class="s2"> = &#39;</span><span class="si">{new_val}</span><span class="s2">&#39; WHERE </span><span class="si">{column_name}</span><span class="s2"> = &#39;</span><span class="si">{old_val}</span><span class="s2">&#39;</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="n">pg_io</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="n">PG_DB</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="o">**</span><span class="n">config</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">f</span><span class="s1">&#39;Updated </span><span class="si">{table_name}</span><span class="s1">&#39;</span></div>
+
+
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../full_script.html#full_script.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">load_shapefiles</span><span class="p">()</span>
+    <span class="n">update_value</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">,</span> <span class="s1">&#39;column_text&#39;</span><span class="p">,</span> <span class="s1">&#39;junky value&#39;</span><span class="p">,</span> <span class="s1">&#39;awesome value&#39;</span><span class="p">)</span>
+    <span class="n">update_value</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">,</span> <span class="s1">&#39;column_int&#39;</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alta Data Science team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
