@@ -72,7 +72,32 @@ Data analysis:
 (dsp) ~ conda install -c udst pandana
 ```
 
-`pip`-only packages, including Alta's `data-science` and Chester's `streetspace`
+NOTES:
+1. `python-igraph` is not available via `conda` on Windows
+2. `osmnx` does not reliably install on Windows machines when
+building environments with the `conda` installation packaged
+with `ArcGIS Pro`/`arcpy`. If you want to build this environment to
+include `arcpy` then you'll want to `pip install` a number of `.whl`
+files first, including `GDAL`, `fiona`, `rtree`, `pyproj`, `shapely`.
+  - After installing the `.whl` files with the processed described below,
+ you'll then need to use `pip`:
+  - `pip install osmnx`
+
+If you experienced either issue, download the necessary `.whl` file(s) from
+[here](https://www.lfd.uci.edu/~gohlke/pythonlibs).
+There are a lot of files to choose from, but only one will work here.
+First find the name of the pacakge you want to download.
+Then find the one with `cp36` and `win_amd64` in the name.
+As of 7/21/2019, the correct version of `igraph` is named
+`python_igraph-0.7.1.post6-cp36-cp36m-win_amd64.whl`.
+Move the downloaded file into your terminal's current
+directory or `cd` into your `Downloads` folder. Install
+the wheel with `pip` and use `TAB` completion to avoid
+typing the full filename:
+ - `pip install python_igraph-0.7.1.post6-cp36-cp36m-win_amd64.whl`
+
+
+Finally, install `pip`-only packages, including Alta's `data-science` and Chester's `streetspace`
 ```bash
 (dsp) ~ pip install PySimpleGUI
 (dsp) ~ pip install git+https://github.com/chesterharvey/StreetSpace.git
@@ -82,7 +107,7 @@ ___
 
 ## Refresh environment modules as needed
 
-For `pip install`-ed packages 
+For `pip install`-ed packages
 (like `data-science` or `streetspace`),
 use the following commands to update:
 ```bash
